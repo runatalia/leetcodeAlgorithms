@@ -1,44 +1,40 @@
 package com.leetcode;
 
- 
-
-
-import static org.junit.jupiter.api.Assertions.fail;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class MediumAlgorithmsTest {
-    
+
     public MediumAlgorithmsTest() {
     }
-@BeforeAll
-public static void setUpClass(){
-System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!int's before!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");}
 
-    /**
-     * Test of possibleBipartition method, of class MediumAlgorithms.
-     */
     @Test
     public void testPossibleBipartition() {
-         fail("The test case is a prototype.");
-       //   assertEquals(true, MediumAlgorithms.possibleBipartition(4, new int[][]{{1,2},{1,3},{2,4}}));
+        System.out.println("possibleBipartition");
+        int n1 = 3;
+        int n2 = 5;
+        int n3 = 4;
+        int n4 = 5;
+        int[][] dislikes1 = new int[][]{{1, 2}, {1, 3}, {2, 3}};
+        int[][] dislikes2 = new int[][]{{1, 2}, {2, 3}, {3, 4}, {4, 5}, {1, 5}};
+        int[][] dislikes3 = new int[][]{{1, 2}, {1, 3}, {2, 3}};
+        int[][] dislikes4 = new int[][]{{1, 2}, {1, 3}, {1, 4}, {1, 5}};
+        assertEquals(false, MediumAlgorithms.possibleBipartition(n1, dislikes1));
+        assertEquals(false, MediumAlgorithms.possibleBipartition(n2, dislikes2));
+        assertEquals(false, MediumAlgorithms.possibleBipartition(n3, dislikes3));
+        assertEquals(true, MediumAlgorithms.possibleBipartition(n4, dislikes4));
     }
 
-    /**
-     * Test of triangularSum method, of class MediumAlgorithms.
-     */
     @Test
     public void testTriangularSum() {
+
     }
 
-    /**
-     * Test of intToRoman method, of class MediumAlgorithms.
-     */
     @Test
     public void testIntToRoman() {
+
     }
-    
+
 }

@@ -1,43 +1,65 @@
 package com.leetcode;
 
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MediumAlgorithms {
-    
-       public static boolean possibleBipartition(int n, int[][] dislikes) {
-          LinkedList <Integer>list=new LinkedList();
-          Map <Integer,Integer> map = new TreeMap();
-          int count = 1;
-          while(count<=n){
-          map.put(count, 0);
-          list.add(count++);
-          }
-          count = 1;
-          while(count<n){
-          for(int i=0;i<dislikes.length;i++){
-              int kluch = map.get(count);
-          if(count!= dislikes[i][0]&&list.contains(dislikes[i][1])&& dislikes[i][1]!=count){
-          map.put(count, dislikes[i][1]);
-          list.remove((Integer)dislikes[i][1]);
-          list.remove((Integer)count);
-          }
-          } 
-          count++;
-          }
-          count =0;
-           for(Map.Entry<Integer, Integer> a:map.entrySet()){
-           if(a.getValue()==0)count++;
-       
-       }
-          return count==n/2; 
-        
-    } 
-    
-    
-    
-    
+
+    /*We want to split a group of n people (labeled from 1 to n) into two groups of any size. Each person may dislike some other people, and they should not go into the same group.
+
+Given the integer n and the array dislikes where dislikes[i] = [ai, bi] indicates that the person labeled ai does not like the person labeled bi, return true if it is possible to split everyone into two groups in this way.
+
+ 
+
+Example 1:
+
+Input: n = 4, dislikes = [[1,2],[1,3],[2,4]]
+Output: true
+Explanation: group1 [1,4] and group2 [2,3].
+Example 2:
+
+Input: n = 3, dislikes = [[1,2],[1,3],[2,3]]
+Output: false
+Example 3:
+
+Input: n = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]]
+Output: false*/
+
+    public static boolean possibleBipartition(int N, int[][] dislikes) {
+        List<Integer>[] graph = new List[N + 1];
+
+        for (int i = 1; i <= N; ++i) graph[i] = new ArrayList<>();
+
+        for (int[] dislike : dislikes) {
+            graph[dislike[0]].add(dislike[1]);
+            graph[dislike[1]].add(dislike[0]);
+        }
+
+        Integer[] colors = new Integer[N + 1];
+
+        for (int i = 1; i <= N; ++i) {
+
+            if (colors[i] == null && !dfs(graph, colors, i, 1)) return false;
+        }
+        return true;
+    }
+
+    private static boolean dfs(List<Integer>[] graph, Integer[] colors, int currNode, int currColor) {
+        colors[currNode] = currColor;
+
+
+        for (Integer adjacentNode : graph[currNode]) {
+
+            if (colors[adjacentNode] == null) {
+                if (!dfs(graph, colors, adjacentNode, currColor * -1)) return false;
+
+            } else if (colors[adjacentNode] == currColor) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     /*triangularSum(int[] nums)
     You are given a 0-indexed integer array nums, where nums[i] is a digit between 0 and 9 (inclusive).
@@ -61,7 +83,6 @@ Input: nums = [5]
 Output: 5
 Explanation:
 Since there is only one element in nums, the triangular sum is the value of that element itself.*/
-
     public static int triangularSum(int[] nums) {
         int length = nums.length;
         while (length > 1) {
@@ -114,10 +135,10 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
     public static String intToRoman(int num) {
         StringBuilder result = new StringBuilder();
         int[] div = {1000, 900, 500, 400, 100, 90,
-            50, 40, 10, 9, 5, 4, 1};
+                50, 40, 10, 9, 5, 4, 1};
         String[] roman = {"M", "CM", "D", "CD", "C", "XC",
-            "L", "XL", "X", "IX", "V", "IV", "I"};
-        for (int i = 0; i < div.length;) {
+                "L", "XL", "X", "IX", "V", "IV", "I"};
+        for (int i = 0; i < div.length; ) {
             if (num >= div[i]) {
                 result.append(roman[i]);
                 num -= div[i];
