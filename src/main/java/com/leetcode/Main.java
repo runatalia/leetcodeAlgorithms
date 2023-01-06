@@ -1,22 +1,18 @@
 package com.leetcode;
 
 
+import additionalClasses.ListNode;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int arr[] = new int[n];
-        int i=0;
-        while(i<n){
-            arr[i] = sc.nextInt();
-            i++;
-        }
-
-        System.out.println(YandexAlgorithms.tankLeveling1(n,arr));
+        int[] nums = new int[]{3, 2, 2, 3};
+        System.out.println(EasyAlgorithms.removeElement(nums, 3));
+        System.out.println(Arrays.toString(nums));
 
 
     }
+
 }
-    

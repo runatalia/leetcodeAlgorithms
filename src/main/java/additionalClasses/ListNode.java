@@ -1,7 +1,9 @@
 package additionalClasses;
 
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /*class ListNode for mergeTwoLists*/
 public class ListNode{
@@ -10,6 +12,36 @@ public class ListNode{
     ListNode() {}
 
     public ListNode(int val) { this.val = val; }
-    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next;
+    }
+    List<ListNode> testList = new ArrayList<>();
+
+//        public Iterator createInteratorListNode(){
+//            return IteratorListNode(next);
+//
+//    }
+
 
 }
+
+
+//class IteratorListNode implements Iterator {
+//    private int position;
+//    private ListNode listNode;
+//    IteratorListNode(ListNode listNode){
+//        this.listNode = listNode;
+//        position=0;
+//    }
+//    @Override
+//    public boolean hasNext() {
+//        return listNode.next!=null;
+//    }
+
+//    @Override
+//    public Object next() {
+//        Integer result = listNode.val;
+//        if (!listNode.hasNext()) throw new IndexOutOfBoundsException("End of list.");
+//        current = current.next;
+//        return result;
+ //   }
+//}

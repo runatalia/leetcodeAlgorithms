@@ -4,6 +4,8 @@ import additionalClasses.ListNode;
 
 import java.util.*;
 
+import static java.lang.Integer.MAX_VALUE;
+
 public class EasyAlgorithms {
 
     /*longestCommonPrefix(String[] strs)
@@ -262,17 +264,58 @@ Merge the two lists in a one sorted list. The list should be made by splicing to
 
 Return the head of the merged linked list.*/
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if(list1==null)return list2;
-        if(list2==null)return list1;
-        if(list1.val<list2.val){
-            list1.next =  mergeTwoLists( list1.next,  list2);
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+        if (list1.val < list2.val) {
+            list1.next = mergeTwoLists(list1.next, list2);
             return list1;
+        } else {
+            list2.next = mergeTwoLists(list2.next, list1);
+            return list2;
         }
-        else {
-            list2.next =  mergeTwoLists( list2.next,  list1);
-            return list2;}
     }
+/*Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+Return k after placing the final result in the first k slots of nums.
+
+Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.*/
+
+    public static int removeDuplicates(int[] nums) {
+        int i = 0;
+        for (int n : nums) {
+            if (i == 0 || n > nums[i - 1]) {
+                nums[i++] = n;
+            }
+        }
+        return i;
+    }
+
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+//
+//Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+//
+//Return k after placing the final result in the first k slots of nums.
+//
+//Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+    public static int removeElement(int[] nums, int val) {
+        int j = nums.length;
+        for (int i = 0; i < j; i++) {
+            if (nums[i] == val) {
+                nums[i] = nums[--j];
+                i--;
+            }
+        }
+        return j;
+    }
+
 }
+
+
+
+
 
 
 
