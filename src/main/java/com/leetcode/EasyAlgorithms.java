@@ -311,7 +311,26 @@ Do not allocate extra space for another array. You must do this by modifying the
         return j;
     }
 
+    //283. Move Zeroes
+//    Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+//
+//    Note that you must do this in-place without making a copy of the array.
+    public static void moveZeroes(int[] nums) {
+        int l = nums.length - 1;
+        for (int i = 0; i <= l; i++) {
+            if (nums[i] == 0) {
+                for (int j = i; j < l; j++) {
+                    nums[j] = nums[j + 1];
+                }
+                i--;
+                nums[l--] = 0;
+            }
+        }
+    }
+
 }
+
+
 
 
 

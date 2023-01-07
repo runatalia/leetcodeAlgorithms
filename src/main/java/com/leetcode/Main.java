@@ -8,11 +8,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] nums = new int[]{3, 2, 2, 3};
-        System.out.println(EasyAlgorithms.removeElement(nums, 3));
+        int[] nums = new int[]{0, 0, 1};
+        EasyAlgorithms.moveZeroes(nums);
         System.out.println(Arrays.toString(nums));
-
-
     }
 
 }

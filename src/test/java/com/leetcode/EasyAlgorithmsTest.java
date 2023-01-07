@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -46,6 +47,20 @@ class EasyAlgorithmsTest {
         assertEquals(5, EasyAlgorithms.removeElement(test2, 2));
         assertEquals(0, EasyAlgorithms.removeElement(test3, 1));
         assertEquals(1, EasyAlgorithms.removeElement(test4, 2));
+
+    }
+
+    @Test
+    void testMoveZeroes() {
+        int[] test1 = new int[]{0, 1, 0, 3, 12};
+        EasyAlgorithms.moveZeroes(test1);
+        int[] test2 = new int[]{0};
+        EasyAlgorithms.moveZeroes(test2);
+        int[] test3 = new int[]{0, 0, 1};
+        EasyAlgorithms.moveZeroes(test3);
+        assertArrayEquals(new int[]{1, 3, 12, 0, 0}, test1);
+        assertArrayEquals(new int[]{0}, test2);
+        assertArrayEquals(new int[]{1, 0, 0}, test3);
 
     }
 
