@@ -313,7 +313,6 @@ Do not allocate extra space for another array. You must do this by modifying the
 
     //283. Move Zeroes
 //    Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
-//
 //    Note that you must do this in-place without making a copy of the array.
     public static void moveZeroes(int[] nums) {
         int l = nums.length - 1;
@@ -328,7 +327,24 @@ Do not allocate extra space for another array. You must do this by modifying the
         }
     }
 
+    //203. Remove Linked List Elements
+    //Given the head of a linked list and an integer val,
+    // remove all the nodes of the linked list that has Node.val == val, and return the new head.
+    static ListNode listNode = new ListNode();
+
+    public static ListNode removeElements(ListNode head, int val) {
+        if (head == null)
+            return listNode;
+        else if (head.val != val) {
+            listNode.val = head.val;
+            listNode.next = new ListNode();
+            System.out.println(listNode.val);
+        }
+        return removeElements(head.next, val);
+    }
+
 }
+
 
 
 
