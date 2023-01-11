@@ -330,18 +330,15 @@ Do not allocate extra space for another array. You must do this by modifying the
     //203. Remove Linked List Elements
     //Given the head of a linked list and an integer val,
     // remove all the nodes of the linked list that has Node.val == val, and return the new head.
-    static ListNode listNode = new ListNode();
 
     public static ListNode removeElements(ListNode head, int val) {
-        if (head == null)
-            return listNode;
-        else if (head.val != val) {
-            listNode.val = head.val;
-            listNode.next = new ListNode();
-            System.out.println(listNode.val);
-        }
-        return removeElements(head.next, val);
+        if (head == null) return null;
+        ListNode node = removeElements(head.next, val);
+        if (head.val == val) return node;
+        head.next = node;
+        return head;
     }
+
 
 }
 

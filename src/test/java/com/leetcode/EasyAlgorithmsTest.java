@@ -1,7 +1,11 @@
 package com.leetcode;
 
+import additionalClasses.ListNode;
 import org.junit.jupiter.api.Test;
 
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -61,6 +65,30 @@ class EasyAlgorithmsTest {
         assertArrayEquals(new int[]{1, 3, 12, 0, 0}, test1);
         assertArrayEquals(new int[]{0}, test2);
         assertArrayEquals(new int[]{1, 0, 0}, test3);
+
+    }
+
+    @Test
+    void testRemoveElements() {
+        ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3,
+                new ListNode(4, new ListNode(5, new ListNode(6)))))));
+        List<Integer> newListNode1 = new ListNode().listNodeToArrays(EasyAlgorithms.removeElements(listNode1, 6));
+        List<Integer> ListNodExpect1 = new ArrayList<>();
+        ListNodExpect1.add(1);
+        ListNodExpect1.add(2);
+        ListNodExpect1.add(3);
+        ListNodExpect1.add(4);
+        ListNodExpect1.add(5);
+        assertEquals(ListNodExpect1, newListNode1);
+        ListNode listNode2 = new ListNode();
+        List<Integer> newListNode2 = new ListNode().listNodeToArrays(EasyAlgorithms.removeElements(listNode2, 1));
+        List<Integer> ListNodExpect2 = new ArrayList<>();
+        ListNodExpect2.add(0);
+        assertEquals(ListNodExpect2, newListNode2);
+        ListNode listNode3 = new ListNode(7, new ListNode(7, new ListNode(7, new ListNode(7))));
+        List<Integer> newListNode3 = new ListNode().listNodeToArrays(EasyAlgorithms.removeElements(listNode3, 7));
+        List<Integer> ListNodExpect3 = null;
+        assertEquals(ListNodExpect3, newListNode3);
 
     }
 

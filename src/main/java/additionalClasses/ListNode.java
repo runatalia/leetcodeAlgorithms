@@ -21,28 +21,20 @@ public class ListNode {
         this.next = next;
     }
 
-    List<ListNode> testList = new ArrayList<>();
+    public static void showListNode(ListNode listNode) {
+        if (listNode == null) return;
+        System.out.println(listNode.val);
+        showListNode(listNode.next);
+    }
+
+    List<Integer> arrLisrNode = new ArrayList<>();
+
+    public List listNodeToArrays(ListNode listNode) {
+        if (listNode == null) return null;
+        arrLisrNode.add(listNode.val);
+        listNodeToArrays(listNode.next);
+        return arrLisrNode;
+    }
 
 }
 
-
-//class IteratorListNode implements Iterator {
-//    private int position;
-//    private ListNode listNode;
-//    IteratorListNode(ListNode listNode){
-//        this.listNode = listNode;
-//        position=0;
-//    }
-//    @Override
-//    public boolean hasNext() {
-//        return listNode.next!=null;
-//    }
-
-//    @Override
-//    public Object next() {
-//        Integer result = listNode.val;
-//        if (!listNode.hasNext()) throw new IndexOutOfBoundsException("End of list.");
-//        current = current.next;
-//        return result;
-//   }
-//}
