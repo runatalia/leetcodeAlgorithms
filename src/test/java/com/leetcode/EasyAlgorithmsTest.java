@@ -104,4 +104,16 @@ class EasyAlgorithmsTest {
         assertArrayEquals(new int[]{1, 4, 2, 0, 0, 0}, EasyAlgorithms.applyOperations(nums4));
     }
 
+    @Test
+    void testSearchInsert() {
+        int nums1[] = new int[]{1, 3, 5, 6};
+        int nums2[] = new int[]{1, 3, 5, 6};
+        int nums3[] = new int[]{1, 3, 5, 6};
+        int nums4[] = new int[]{1, 3, 5, 6};
+        assertEquals(2, EasyAlgorithms.searchInsert(nums1, 5));
+        assertEquals(1, EasyAlgorithms.searchInsert(nums2, 2));
+        assertEquals(4, EasyAlgorithms.searchInsert(nums3, 7));
+        assertEquals(0, EasyAlgorithms.searchInsert(nums4, 0));
+    }
+
 }
