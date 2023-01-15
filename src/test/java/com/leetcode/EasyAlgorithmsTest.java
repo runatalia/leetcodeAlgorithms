@@ -92,4 +92,16 @@ class EasyAlgorithmsTest {
 
     }
 
+    @Test
+    void testApplyOperations() {
+        int nums1[] = new int[]{0, 2, 1, 0, 5, 0};
+        int nums2[] = new int[]{0, 1};
+        int nums3[] = new int[]{0, 0, 1};
+        int nums4[] = new int[]{1, 2, 2, 1, 1, 0};
+        assertArrayEquals(new int[]{2, 1, 5, 0, 0, 0}, EasyAlgorithms.applyOperations(nums1));
+        assertArrayEquals(new int[]{1, 0}, EasyAlgorithms.applyOperations(nums2));
+        assertArrayEquals(new int[]{1, 0, 0}, EasyAlgorithms.applyOperations(nums3));
+        assertArrayEquals(new int[]{1, 4, 2, 0, 0, 0}, EasyAlgorithms.applyOperations(nums4));
+    }
+
 }
