@@ -1,29 +1,21 @@
 package com.leetcode;
 
 import additionalClasses.ListNode;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.hamcrest.CoreMatchers.*;
 
 
 class EasyAlgorithmsTest {
-    @Test
-    void testMergeTwoLists() {
-//        ListNode lis11 = new ListNode(1,new ListNode(2,new ListNode(4)));
-//        ListNode lis12 = new ListNode(1,new ListNode(3,new ListNode(4)));
-//        ListNode expectedList11 = new ListNode(1,new ListNode(1,new ListNode(2,
-//                new ListNode(3,new ListNode(4,new ListNode(4))))));
-//
-//        assertEquals(expectedList11,EasyAlgorithms.mergeTwoLists(lis11, lis12));
 
-    }
 
     @Test
     void testRemoveDuplicates() {
@@ -114,6 +106,22 @@ class EasyAlgorithmsTest {
         assertEquals(1, EasyAlgorithms.searchInsert(nums2, 2));
         assertEquals(4, EasyAlgorithms.searchInsert(nums3, 7));
         assertEquals(0, EasyAlgorithms.searchInsert(nums4, 0));
+    }
+
+    @Test
+    void testFirstBadVersion() {
+        assertEquals(4, EasyAlgorithms.firstBadVersion(5));
+        Assertions.assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
+            return "result";
+        });
+    }
+
+    @Test
+    void testGuessNumber() throws InterruptedException {
+        assertEquals(10000, EasyAlgorithms.guessNumber(1000000));
+        Assertions.assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
+            return "result";
+        });
     }
 
 }
