@@ -462,6 +462,36 @@ Do not allocate extra space for another array. You must do this by modifying the
         if (k > i) return 1;
         return 0;
     }
+
+    //69. Sqrt(x)
+    //Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+    //
+    //You must not use any built-in exponent function or operator.
+    //
+    //For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
+    public static int mySqrt(int x) {
+        if (x == 1) {
+            return 1;
+        }
+        int divider = 0;
+        while (divider * divider != x) {
+            int left = 0;
+            int right = x;
+            divider = 0;
+            while (right - left > 1) {
+                divider = left + (right - left) / 2;
+                if (divider * divider == x) {
+                    return divider;
+                } else if (divider * divider > x) {
+                    right = divider;
+                } else if (divider * divider < x) {
+                    left = divider;
+                }
+            }
+            x--;
+        }
+        return divider;
+    }
 }
 
 
