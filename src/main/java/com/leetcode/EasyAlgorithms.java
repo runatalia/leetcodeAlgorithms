@@ -3,9 +3,9 @@ package com.leetcode;
 import additionalClasses.ListNode;
 
 import java.lang.reflect.Array;
+import java.math.BigInteger;
 import java.util.*;
 
-import static java.lang.Integer.MAX_VALUE;
 
 public class EasyAlgorithms {
 
@@ -470,28 +470,71 @@ Do not allocate extra space for another array. You must do this by modifying the
     //
     //For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
     public static int mySqrt(int x) {
-        if (x == 1) {
-            return 1;
-        }
-        int divider = 0;
-        while (divider * divider != x) {
-            int left = 0;
-            int right = x;
-            divider = 0;
-            while (right - left > 1) {
-                divider = left + (right - left) / 2;
-                if (divider * divider == x) {
+        int divider;
+        int left = 1;
+        int right = x;
+        if (x == 0) return 0;
+        while (true) {
+            divider = left + (right - left) / 2;
+            if (divider > x / divider) {
+                right = divider;
+            } else {
+                if ((divider + 1) > x / (divider + 1))
                     return divider;
-                } else if (divider * divider > x) {
-                    right = divider;
-                } else if (divider * divider < x) {
-                    left = divider;
-                }
+                left = divider + 1;
             }
-            x--;
         }
-        return divider;
+
+
     }
+    //367. Valid Perfect Square
+    // Given a positive integer num, return true if num is a perfect square or false otherwise.
+    //A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself.
+    //You must not use any built-in library function, such as sqrt.
+
+    public static boolean isPerfectSquare(int num) {
+        int left = 1;
+        int right = num;
+        double sqrt;
+        while (left <= right) {
+            sqrt = left + (right - left) / 2;
+            if (sqrt == num / sqrt) {
+                return true;
+            }
+            if (sqrt > num / sqrt) {
+                right = (int) sqrt - 1;
+            } else if (sqrt < num / sqrt)
+                left = (int) sqrt + 1;
+        }
+        return false;
+    }
+
+    //Given a string s consisting of words and spaces, return the length of the last word in the string.
+//
+//A word is a maximal
+//substring
+// consisting of non-space characters only.
+    public static int lengthOfLastWord1(String s) {
+        String[] newStr = s.trim().split(" ");
+        return newStr[newStr.length - 1].length();
+
+    }
+
+    public static int lengthOfLastWord2(String s) {
+        int count = 0;
+        int countLast = 0;
+        int i = 0;
+        while (i < s.length()) {
+            if (s.charAt(i) == 32 || i == s.length() - 1) {
+                if (count != 0) countLast = count;
+                count = -1;
+            }
+            i++;
+            count++;
+        }
+        return countLast;
+    }
+
 }
 
 

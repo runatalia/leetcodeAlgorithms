@@ -15,7 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
-
+    @Test
+    void testmySqrt() {
+        assertEquals(5, EasyAlgorithms.mySqrt(25));
+        assertEquals(2, EasyAlgorithms.mySqrt(8));
+        assertEquals(1, EasyAlgorithms.mySqrt(1));
+        assertEquals(46339, EasyAlgorithms.mySqrt(2147395599));
+        assertEquals(11, EasyAlgorithms.mySqrt(122));
+    }
 
     @Test
     void testRemoveDuplicates() {
