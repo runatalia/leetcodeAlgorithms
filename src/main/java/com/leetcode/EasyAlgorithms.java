@@ -525,12 +525,16 @@ Do not allocate extra space for another array. You must do this by modifying the
         int countLast = 0;
         int i = 0;
         while (i < s.length()) {
-            if (s.charAt(i) == 32 || i == s.length() - 1) {
+            if (s.charAt(i) != 32) {
+                count++;
+                if (i == s.length() - 1) {
+                    return count;
+                }
+            } else {
                 if (count != 0) countLast = count;
-                count = -1;
+                count = 0;
             }
             i++;
-            count++;
         }
         return countLast;
     }

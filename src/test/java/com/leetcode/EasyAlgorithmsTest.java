@@ -15,6 +15,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
+
+    @Test
+    void testlengthOfLastWord2() {
+        assertEquals(5, EasyAlgorithms.lengthOfLastWord2("Hello World"));
+        assertEquals(4, EasyAlgorithms.lengthOfLastWord2("   fly me   to   the moon  "));
+        assertEquals(6, EasyAlgorithms.lengthOfLastWord2("luffy is still joyboy"));
+        assertEquals(0, EasyAlgorithms.lengthOfLastWord2("   "));
+        assertEquals(0, EasyAlgorithms.lengthOfLastWord2(""));
+    }
+
+    @Test
+    void testlengthOfLastWord1() {
+        assertEquals(5, EasyAlgorithms.lengthOfLastWord1("Hello World"));
+        assertEquals(4, EasyAlgorithms.lengthOfLastWord1("   fly me   to   the moon  "));
+        assertEquals(6, EasyAlgorithms.lengthOfLastWord1("luffy is still joyboy"));
+        assertEquals(0, EasyAlgorithms.lengthOfLastWord1("   "));
+        assertEquals(0, EasyAlgorithms.lengthOfLastWord1(""));
+    }
+
     @Test
     void testmySqrt() {
         assertEquals(5, EasyAlgorithms.mySqrt(25));
