@@ -15,6 +15,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
+    @Test
+    void testIsValid() throws InterruptedException {
+        assertEquals(true, EasyAlgorithms.isValid("()"));
+        assertEquals(true, EasyAlgorithms.isValid("()[]{}"));
+        assertEquals(false, EasyAlgorithms.isValid("(]"));
+        assertEquals(false, EasyAlgorithms.isValid("}("));
+        assertEquals(false, EasyAlgorithms.isValid("()("));
+
+    }
 
     @Test
     void testlengthOfLastWord2() {

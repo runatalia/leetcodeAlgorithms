@@ -539,7 +539,30 @@ Do not allocate extra space for another array. You must do this by modifying the
         return countLast;
     }
 
+    //Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+//
+//An input string is valid if:
+//
+//Open brackets must be closed by the same type of brackets.
+//Open brackets must be closed in the correct order.
+//Every close bracket has a corresponding open bracket of the same type.
+    public static boolean isValid(String s) {
+        if (s.length() % 2 != 0) return false;
+        ArrayDeque<Character> stack = new ArrayDeque<>();
+        char a;
+        for (int i = 0; i < s.length(); i++) {
+            a = s.charAt(i);
+            if (a == '(' || a == '{' || a == '[') stack.add(a);
+            else if (stack.isEmpty()) return false;
+            else if (a == '}' && stack.peekLast() == '{') stack.pollLast();
+            else if (a == ')' && stack.peekLast() == '(') stack.pollLast();
+            else if (a == ']' && stack.peekLast() == '[') stack.pollLast();
+        }
+        return stack.isEmpty();
+    }
+
 }
+
 
 
 
