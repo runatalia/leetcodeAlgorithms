@@ -16,6 +16,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EasyAlgorithmsTest {
     @Test
+    void testIsPalindrome() throws InterruptedException {
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
+        ListNode list2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
+        ListNode list3 = new ListNode(1);
+        ListNode list4 = new ListNode(1, new ListNode(0, new ListNode(3)));
+        ListNode list5 = new ListNode(1, new ListNode(0, new ListNode(1)));
+        ListNode list6 = new ListNode(2, new ListNode(0, new ListNode(1)));
+        assertEquals(true, EasyAlgorithms.isPalindrome(list1));
+        assertEquals(true, EasyAlgorithms.isPalindrome(list2));
+        assertEquals(true, EasyAlgorithms.isPalindrome(list3));
+        assertEquals(false, EasyAlgorithms.isPalindrome(list4));
+        assertEquals(true, EasyAlgorithms.isPalindrome(list5));
+        assertEquals(false, EasyAlgorithms.isPalindrome(list6));
+
+    }
+
+    @Test
     void testIsValid() throws InterruptedException {
         assertEquals(true, EasyAlgorithms.isValid("()"));
         assertEquals(true, EasyAlgorithms.isValid("()[]{}"));

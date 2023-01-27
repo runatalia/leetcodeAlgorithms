@@ -1,6 +1,7 @@
 package com.leetcode;
 
 import additionalClasses.ListNode;
+import org.w3c.dom.Node;
 
 import java.lang.reflect.Array;
 import java.math.BigInteger;
@@ -539,7 +540,8 @@ Do not allocate extra space for another array. You must do this by modifying the
         return countLast;
     }
 
-    //Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+    //20. Valid Parentheses
+//Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 //
 //An input string is valid if:
 //
@@ -561,10 +563,26 @@ Do not allocate extra space for another array. You must do this by modifying the
         return stack.isEmpty();
     }
 
+    //Given the head of a singly linked list, return true if it is a
+//palindrome
+// or false otherwise.
+    public static boolean isPalindrome(ListNode head) {
+        Deque<Integer> deq = new ArrayDeque<>();
+        List<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        if (list.isEmpty() || list.size() == 1) return true;
+        for (int i = 0, j = list.size() - 1; i < list.size() / 2; i++, j--) {
+            if (list.get(i) != list.get(j)) return false;
+
+        }
+        return true;
+    }
+
+
 }
-
-
-
 
 
 
