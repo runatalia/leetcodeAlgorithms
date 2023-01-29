@@ -581,7 +581,18 @@ Do not allocate extra space for another array. You must do this by modifying the
         return true;
     }
 
+    //A phrase is a palindrome if, after converting all uppercase letters
+    // into lowercase letters and removing all non-alphanumeric characters,
+    // it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+    //Given a string s, return true if it is a palindrome, or false otherwise.
+    public static boolean isPalindrome(String s) {
+        char[] str = s.replaceAll("[\\s_\\W]", "").toLowerCase().toCharArray();
+        for (int i = 0, j = str.length - 1; i < str.length / 2; i++, j--) {
+            if (str[i] != str[j]) return false;
+        }
+        return true;
 
+    }
 }
 
 

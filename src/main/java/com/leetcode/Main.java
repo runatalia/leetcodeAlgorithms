@@ -11,7 +11,7 @@ public class Main {
         //ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
         ListNode list = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         //ListNode list = new ListNode(1);
-        System.out.println(EasyAlgorithms.isPalindrome(list));
+        System.out.println(EasyAlgorithms.isPalindrome(" "));
     }
 
 
