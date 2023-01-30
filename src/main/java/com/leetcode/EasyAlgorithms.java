@@ -593,6 +593,26 @@ Do not allocate extra space for another array. You must do this by modifying the
         return true;
 
     }
+
+    //Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+    public static boolean validPalindrome(String s) {
+        for (int i = 0, j = s.length() - 1; i < s.length() / 2; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                if (checkPolindrom(s, i + 1, j)) return true;
+                return checkPolindrom(s, i, j - 1);
+            }
+        }
+        return true;
+    }
+
+    private static boolean checkPolindrom(String s, int i, int j) {
+        for (; i < s.length() / 2; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 
