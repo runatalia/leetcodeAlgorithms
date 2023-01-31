@@ -16,6 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EasyAlgorithmsTest {
     @Test
+    void testValidPalindrome() throws InterruptedException {
+        assertEquals(true, EasyAlgorithms.validPalindrome("aba"));
+        assertEquals(true, EasyAlgorithms.validPalindrome("abca"));
+        assertEquals(false, EasyAlgorithms.validPalindrome("abc"));
+        assertEquals(true, EasyAlgorithms.validPalindrome("cbbcc"));
+    }
+
+    @Test
     void testIsPalindrome2() throws InterruptedException {
         assertEquals(true, EasyAlgorithms.isPalindrome(" "));
         assertEquals(true, EasyAlgorithms.isPalindrome("ab_a"));

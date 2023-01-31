@@ -606,7 +606,7 @@ Do not allocate extra space for another array. You must do this by modifying the
     }
 
     private static boolean checkPolindrom(String s, int i, int j) {
-        for (; i < s.length() / 2; i++, j--) {
+        for (; i < (s.length() + 1) / 2; i++, j--) {
             if (s.charAt(i) != s.charAt(j)) {
                 return false;
             }
