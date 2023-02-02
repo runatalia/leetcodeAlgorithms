@@ -13,7 +13,7 @@ public class Main {
         //ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
         //    ListNode list = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         //ListNode list = new ListNode(1);
-        System.out.println(EasyAlgorithms.validPalindrome("abca"));
+        System.out.println(EasyAlgorithms.backspaceCompare("a#dd##hhh###", ""));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
