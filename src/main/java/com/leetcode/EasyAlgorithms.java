@@ -615,23 +615,17 @@ Do not allocate extra space for another array. You must do this by modifying the
     }
 
     public static boolean backspaceCompare(String s, String t) {
-        int count = 0;
-        StringBuilder newS = new StringBuilder(s);
-        StringBuilder newT = new StringBuilder(t);
-        while (count < s.length()) {
-            newS = newS.replace("([a-z])#", "");
-            newT = newT.("[a-z]#", "");
-            count++;
+        return helpBackspaceCompare(s).equals(helpBackspaceCompare(t));
+    }
+
+    public static String helpBackspaceCompare(String s) {
+        ArrayDeque deque = new ArrayDeque();
+        for (char a : s.toCharArray()) {
+            if (a != '#') {
+                deque.addLast(a);
+            } else deque.pollLast();
         }
-        if (s.length() != t.length()) {
-            return false;
-        }
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != t.charAt(i)) {
-                return false;
-            }
-        }
-        return false;
+        return String.valueOf(deque);
     }
 }
 

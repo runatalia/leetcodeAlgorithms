@@ -13,7 +13,8 @@ public class Main {
         //ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
         //    ListNode list = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         //ListNode list = new ListNode(1);
-        System.out.println(EasyAlgorithms.backspaceCompare("a#dd##hhh###", ""));
+
+        System.out.println(EasyAlgorithms.backspaceCompare("#bcd", "#bcd"));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
@@ -46,7 +47,7 @@ public class Main {
 //    }
 //    @Override
 //    public void uncaughtException(Thread t, Throwable e) {
-//        System.out.println("XOXOXOXo ошибочка!!");
+//        System.out.println("ошибочка!!");
     }
 }
 

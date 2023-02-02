@@ -15,6 +15,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
+
+    @Test
+    void testBackspaceCompare() throws InterruptedException {
+        assertEquals(true, EasyAlgorithms.backspaceCompare("ab#c", "ad#c"));
+        assertEquals(true, EasyAlgorithms.backspaceCompare("ab##", "c#d#"));
+        assertEquals(false, EasyAlgorithms.backspaceCompare("a#c", "b"));
+        assertEquals(false, EasyAlgorithms.backspaceCompare("abcd", "bbcd"));
+    }
+
     @Test
     void testValidPalindrome() throws InterruptedException {
         assertEquals(true, EasyAlgorithms.validPalindrome("aba"));
