@@ -627,7 +627,37 @@ Do not allocate extra space for another array. You must do this by modifying the
         }
         return String.valueOf(deque);
     }
+
+    //67. Add Binary
+    //Given two binary strings a and b, return their sum as a binary string.
+    public static String addBinary(String a, String b) {
+        String result = "";
+        int maxLen = Math.max(a.length(), b.length());
+        char[] aArray = new char[maxLen];
+        char[] bArray = new char[maxLen];
+        if (a.length() != maxLen) System.arraycopy(a.toCharArray(), 0, aArray, maxLen - a.length(), a.length());
+        else aArray = a.toCharArray();
+        if (b.length() != maxLen) System.arraycopy(b.toCharArray(), 0, bArray, maxLen - b.length(), b.length());
+        else bArray = b.toCharArray();
+        for (int i = maxLen - 1; i >= 0; i--) {
+            if (aArray[i] == '0' && bArray[i] == '0') result += 0;
+            else if (aArray[i] == '0' && bArray[i] == '1') result += 1;
+            else if (aArray[i] == '1' && bArray[i] == '0') result += 1;
+            else {
+                result += 0;
+                if (i != 0) {
+                    if (aArray[i - 1] == '0') aArray[i - 1] = '1';
+                    else aArray[i - 1] = '0';
+                }
+            }
+        }
+        if (aArray[0] == '1' && bArray[0] == '1') result += 1;
+
+
+        return result;
+    }
 }
+
 
 
 

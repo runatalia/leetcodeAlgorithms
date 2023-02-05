@@ -10,11 +10,13 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList ar = new ArrayList();
+        Iterator it = ar.iterator();
         //ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
         //    ListNode list = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         //ListNode list = new ListNode(1);
 
-        System.out.println(EasyAlgorithms.backspaceCompare("#bcd", "#bcd"));
+        System.out.println(EasyAlgorithms.addBinary("11", "1"));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
