@@ -4,19 +4,21 @@ package com.leetcode;
 import additionalClasses.ListNode;
 
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList ar = new ArrayList();
-        Iterator it = ar.iterator();
-        //ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(2, new ListNode(1))))));
-        //    ListNode list = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
-        //ListNode list = new ListNode(1);
+//        ArrayList ar = new ArrayList();
+//        Iterator it = ar.iterator();
+//        Object[] arr = new Object[]{};
+//        Optional opt = Arrays.stream(arr).findAny();
+        System.out.println(Stream.of("Вася", "оля", "Катя", "катя", "Вася", "Вася").map(x -> x.toUpperCase()).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
 
-        System.out.println(EasyAlgorithms.addBinary("11", "1"));
+
+        //  System.out.println(Arrays.stream(arr).skip(1).limit(arr.length - 1).filter(x -> x % 2 != 0).max());
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
