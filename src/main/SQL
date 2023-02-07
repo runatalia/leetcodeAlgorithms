@@ -1,0 +1,47 @@
+182. Duplicate Emails
+   select email from Person group by email having count(email)>1;
+
+176. Second Highest Salary
+select  ifnull((select DISTINCT salary  from Employee
+order by salary desc
+limit 1 offset 1 ),null) as
+SecondHighestSalary from
+Employee limit 1;
+
+175. Combine Two Tables
+select p.firstName, p.lastName, a.city, a.state  from Person p left join   Address a on(p.personId = a.personId);
+
+183. Customers Who Never Order
+select d.name as Department, e.name as Employee, e.salary as Salary from employee e join department d
+on(d.id = e.departmentId) where (e.salary,e.departmentId) in (select max(salary),departmentId from employee group by departmentId) ;
+
+511. Game Play Analysis I
+select player_id, min(event_date) as first_login from Activity  group by player_id ;
+
+177. Nth Highest Salary
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+DECLARE M INT;
+SET M=N-1;
+  RETURN (
+    select DISTINCT Salary  as getNthHighestSalary
+        FROM Employee
+        ORDER BY Salary DESC
+        LIMIT M, 1
+  );
+END
+
+586. Customer Placing the Largest Number of Orders
+select customer_number from Orders group by  customer_number
+ORDER BY COUNT(*) DESC
+LIMIT 1
+
+595. Big Countries
+select name, population, area   from world where area>=3000000  or  population >= 25000000;
+
+620. Not Boring Movies
+select *from Cinema where description!='boring' and id%2!=0 order by rating desc;
+
+626. Exchange Seats
+select  p.name from SalesPerson p  where sales_id not in (select o.sales_id from Orders o
+left join  Company c on c.com_id = o.com_id where name = 'RED');

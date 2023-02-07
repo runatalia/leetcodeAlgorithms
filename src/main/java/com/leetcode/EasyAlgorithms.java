@@ -1,10 +1,7 @@
 package com.leetcode;
 
 import additionalClasses.ListNode;
-import org.w3c.dom.Node;
 
-import java.lang.reflect.Array;
-import java.math.BigInteger;
 import java.util.*;
 
 

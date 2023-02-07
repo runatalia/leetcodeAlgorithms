@@ -4,11 +4,9 @@ import additionalClasses.ListNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
