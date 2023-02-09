@@ -14,9 +14,8 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
-        ListNode node = new ListNode(1, new ListNode(2, new ListNode(5)));
-        System.out.println(Stream.of("Вася", "оля", "Катя", "катя", "Вася", "Вася").map(x -> x.toUpperCase()).
-                collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+        int[] a = new int[]{2, 2, 1};
+        System.out.println(EasyAlgorithms.singleNumber(a));
 
 
         //  System.out.println(Arrays.stream(arr).skip(1).limit(arr.length - 1).filter(x -> x % 2 != 0).max());

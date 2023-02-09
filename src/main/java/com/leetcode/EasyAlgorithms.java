@@ -653,6 +653,20 @@ Do not allocate extra space for another array. You must do this by modifying the
 
         return result;
     }
+
+    public static int singleNumber(int[] nums) {
+        int k = nums[0];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    break;
+                }
+                k = nums[i];
+            }
+
+        }
+        return k;
+    }
 }
 
 
