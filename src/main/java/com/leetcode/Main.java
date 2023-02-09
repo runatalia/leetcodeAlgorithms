@@ -1,6 +1,9 @@
 package com.leetcode;
 
 
+import additionalClasses.ListNode;
+import org.w3c.dom.Node;
+
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,6 +14,7 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
+        ListNode node = new ListNode(1, new ListNode(2, new ListNode(5)));
         System.out.println(Stream.of("Вася", "оля", "Катя", "катя", "Вася", "Вася").map(x -> x.toUpperCase()).
                 collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
 

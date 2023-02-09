@@ -36,5 +36,11 @@ public class ListNode {
         return arrLisrNode;
     }
 
+    public void add(int data) {
+        ListNode newNode = new ListNode(data);
+        newNode.next = next;
+        next = newNode;
+    }
+
 }
 
