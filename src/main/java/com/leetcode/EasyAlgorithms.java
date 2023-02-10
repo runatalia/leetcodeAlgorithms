@@ -653,19 +653,16 @@ Do not allocate extra space for another array. You must do this by modifying the
 
         return result;
     }
+    //136. Single Number
+    //Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+    //You must implement a solution with a linear runtime complexity and use only constant extra space.
 
     public static int singleNumber(int[] nums) {
-        int k = nums[0];
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
-                    break;
-                }
-                k = nums[i];
-            }
-
+        int result = 0;
+        for (int i : nums) {
+            result ^= i;
         }
-        return k;
+        return result;
     }
 }
 

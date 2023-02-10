@@ -13,6 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
+    @Test
+    void testSingleNumber() throws InterruptedException {
+        assertEquals(1, EasyAlgorithms.singleNumber(new int[]{2, 2, 1}));
+        assertEquals(4, EasyAlgorithms.singleNumber(new int[]{4, 1, 2, 1, 2}));
+        assertEquals(1, EasyAlgorithms.singleNumber(new int[]{1}));
+    }
 
     @Test
     void testBackspaceCompare() throws InterruptedException {

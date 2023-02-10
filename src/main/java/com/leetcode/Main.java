@@ -14,7 +14,7 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
-        int[] a = new int[]{2, 2, 1};
+        int[] a = new int[]{4, 1, 2, 1, 2};
         System.out.println(EasyAlgorithms.singleNumber(a));
 
 
