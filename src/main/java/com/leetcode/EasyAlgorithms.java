@@ -664,6 +664,16 @@ Do not allocate extra space for another array. You must do this by modifying the
         }
         return result;
     }
+
+    public static int[] plusOne(int[] nums) {
+        String str = Arrays.toString(nums);
+        String newStr = Integer.parseInt(str) + 1 + "";
+        int[] newNums = new int[newStr.length()];
+        for (int i = 0; i < newStr.length(); i++) {
+            newNums[i] = newStr.charAt(i);
+        }
+        return newNums;
+    }
 }
 
 

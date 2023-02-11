@@ -14,8 +14,8 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
-        int[] a = new int[]{4, 1, 2, 1, 2};
-        System.out.println(EasyAlgorithms.singleNumber(a));
+        int[] a = new int[]{1, 2, 3};
+        System.out.println(EasyAlgorithms.plusOne(a));
 
 
         //  System.out.println(Arrays.stream(arr).skip(1).limit(arr.length - 1).filter(x -> x % 2 != 0).max());
