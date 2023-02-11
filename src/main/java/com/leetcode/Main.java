@@ -4,6 +4,7 @@ package com.leetcode;
 import additionalClasses.ListNode;
 import org.w3c.dom.Node;
 
+import java.util.Arrays;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,8 +15,10 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
-        int[] a = new int[]{1, 2, 3};
-        System.out.println(EasyAlgorithms.plusOne(a));
+        int[] a = new int[]{9, 9, 9};
+        ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
+        // System.out.println(EasyAlgorithms.deleteDuplicates(node)));
 
 
         //  System.out.println(Arrays.stream(arr).skip(1).limit(arr.length - 1).filter(x -> x % 2 != 0).max());

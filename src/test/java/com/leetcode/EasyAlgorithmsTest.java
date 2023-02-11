@@ -14,6 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EasyAlgorithmsTest {
     @Test
+    void testPlusOne() throws InterruptedException {
+        assertArrayEquals(new int[]{1, 2, 4}, EasyAlgorithms.plusOne(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{4, 3, 2, 2}, EasyAlgorithms.plusOne(new int[]{4, 3, 2, 1}));
+        assertArrayEquals(new int[]{1, 0}, EasyAlgorithms.plusOne(new int[]{9}));
+        assertArrayEquals(new int[]{1, 0, 0, 0, 0}, EasyAlgorithms.plusOne(new int[]{9, 9, 9, 9}));
+    }
+
+    @Test
     void testSingleNumber() throws InterruptedException {
         assertEquals(1, EasyAlgorithms.singleNumber(new int[]{2, 2, 1}));
         assertEquals(4, EasyAlgorithms.singleNumber(new int[]{4, 1, 2, 1, 2}));

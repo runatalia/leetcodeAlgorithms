@@ -665,15 +665,39 @@ Do not allocate extra space for another array. You must do this by modifying the
         return result;
     }
 
+    //66. Plus One
+    //You are given a large integer represented as an integer array digits, where each
+    // digits[i] is the ith digit of the integer. The digits are ordered from most significant
+    // to least significant in left-to-right order. The large integer does not contain any leading 0's.
+    //Increment the large integer by one and return the resulting array of digits.
     public static int[] plusOne(int[] nums) {
-        String str = Arrays.toString(nums);
-        String newStr = Integer.parseInt(str) + 1 + "";
-        int[] newNums = new int[newStr.length()];
-        for (int i = 0; i < newStr.length(); i++) {
-            newNums[i] = newStr.charAt(i);
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] < 9) {
+                nums[i] += 1;
+                return nums;
+            } else if (nums[i] == 9) nums[i] = 0;
         }
+        int newNums[] = new int[nums.length + 1];
+        newNums[0] = 1;
         return newNums;
     }
+
+    //83. Remove Duplicates from Sorted List
+    //Given the head of a sorted linked list,
+    // delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode listNode = new ListNode();
+        while (head.next != null) {
+            if (head.val != head.next.val) {
+                listNode.val = head.val;
+                listNode.next = new ListNode();
+                deleteDuplicates(listNode);
+            }
+            head = head.next;
+        }
+        return listNode;
+    }
+
 }
 
 
