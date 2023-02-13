@@ -564,7 +564,6 @@ Do not allocate extra space for another array. You must do this by modifying the
 //palindrome
 // or false otherwise.
     public static boolean isPalindrome(ListNode head) {
-        Deque<Integer> deq = new ArrayDeque<>();
         List<Integer> list = new ArrayList<>();
         while (head != null) {
             list.add(head.val);
@@ -686,23 +685,11 @@ Do not allocate extra space for another array. You must do this by modifying the
     //Given the head of a sorted linked list,
     // delete all duplicates such that each element appears only once. Return the linked list sorted as well.
     public static ListNode deleteDuplicates(ListNode head) {
-        ListNode listNode = new ListNode();
-        while (head.next != null) {
-            if (head.val != head.next.val) {
-                listNode.val = head.val;
-                listNode.next = new ListNode();
-                deleteDuplicates(listNode);
-            }
-            head = head.next;
-        }
-        return listNode;
+        if (head == null || head.next == null) return head;
+        head.next = deleteDuplicates(head.next);
+        return head.val == head.next.val ? head.next : head;
     }
-
 }
-
-
-
-
 
 
 
