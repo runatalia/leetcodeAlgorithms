@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -13,6 +15,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EasyAlgorithmsTest {
+    @Test
+    void testDeleteDuplicates() throws InterruptedException {
+        List<Integer> node1 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
+                new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
+  
+        ListNode node2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(5)))));
+        ListNode node3 = new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(5)))));
+        ListNode node4 = new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))));
+        assertArrayEquals(List.of(1, 2, 3), node1);
+        //  assertArrayEquals(new int[]{4, 3, 2, 2}, EasyAlgorithms.deleteDuplicates(node2));
+        //  assertArrayEquals(new int[]{1, 0}, EasyAlgorithms.deleteDuplicates(node3));
+        //  assertArrayEquals(new int[]{1, 0, 0, 0, 0}, EasyAlgorithms.deleteDuplicates(node4));
+    }
+
     @Test
     void testPlusOne() throws InterruptedException {
         assertArrayEquals(new int[]{1, 2, 4}, EasyAlgorithms.plusOne(new int[]{1, 2, 3}));
