@@ -15,10 +15,11 @@ public class Main {
 //        Iterator it = ar.iterator();
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
-        int[] a = new int[]{9, 9, 9};
-        ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
-        // System.out.println(EasyAlgorithms.deleteDuplicates(node)));
+        //   int[] a = new int[]{9, 9, 9};
+        //   ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
+
+        System.out.println(EasyAlgorithms.addToArrayForm(new int[]{7, 7, 5, 2}, 7105));
 
 
         //  System.out.println(Arrays.stream(arr).skip(1).limit(arr.length - 1).filter(x -> x % 2 != 0).max());
