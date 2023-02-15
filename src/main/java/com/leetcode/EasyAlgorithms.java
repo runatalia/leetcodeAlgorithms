@@ -694,30 +694,6 @@ Do not allocate extra space for another array. You must do this by modifying the
     //The array-form of an integer num is an array representing its digits in left to right order.
     //For example, for num = 1321, the array form is [1,3,2,1].
     //Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
-//    public static List<Integer> addToArrayForm(int[] num, int k) {
-//        List<Integer> list = new ArrayList<>();
-//        int sum = 0;
-//        for (int i = num.length - 1; i >= 0; i--) {
-//            sum += k % 10 + num[i];
-//            if (sum <= 9)
-//                list.add(sum);
-//            else list.add(sum % 10);
-//            sum = sum / 10;
-//            k = k / 10;
-//            if (i == 0 && (k > 0 || sum > 0)) {
-//                while (k > 0 || sum > 0) {
-//                    sum += k % 10;
-//                    if (sum < 9) list.add(sum);
-//                    else list.add(sum % 10);
-//                    k = k / 10;
-//                    sum = sum / 10;
-//                }
-//            }
-//        }
-//        Collections.reverse(list);
-//        if (list.get(0) == 0) list.add(0, 1);
-//        return list;
-//    }
     public static List<Integer> addToArrayForm(int[] num, int k) {
         List<Integer> list = new ArrayList<>();
         int i = num.length;

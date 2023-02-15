@@ -16,6 +16,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EasyAlgorithmsTest {
     @Test
+    void testAddToArrayForm() throws InterruptedException {
+        assertArrayEquals(new Integer[]{1, 2, 3, 4}, EasyAlgorithms.addToArrayForm(new int[]{1, 2, 0, 0}, 34).toArray());
+        assertArrayEquals(new Integer[]{4, 5, 5}, EasyAlgorithms.addToArrayForm(new int[]{2, 7, 4}, 181).toArray());
+        assertArrayEquals(new Integer[]{1, 0, 2, 1}, EasyAlgorithms.addToArrayForm(new int[]{2, 1, 5}, 806).toArray());
+        assertArrayEquals(new Integer[]{1, 4, 8, 5, 7}, EasyAlgorithms.addToArrayForm(new int[]{7, 7, 5, 2}, 7105).toArray());
+        assertArrayEquals(new Integer[]{2, 3}, EasyAlgorithms.addToArrayForm(new int[]{2, 3}, 0).toArray());
+        assertArrayEquals(new Integer[]{1, 0, 0, 0}, EasyAlgorithms.addToArrayForm(new int[]{7}, 993).toArray());
+    }
+
+    @Test
     void testDeleteDuplicates() throws InterruptedException {
         List<Integer> node1 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
                 new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
