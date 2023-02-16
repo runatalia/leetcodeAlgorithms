@@ -708,5 +708,48 @@ Do not allocate extra space for another array. You must do this by modifying the
         return list;
     }
 
+    //Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+//
+//You must solve the problem without using any built-in library for handling large integers (such as BigInteger).
+// You must also not convert the inputs to integers directly.
+    public static String addStrings(String num1, String num2) {
+        StringBuilder result = new StringBuilder();
+        int sum = 0;
+        int i = num1.length() - 1;
+        int j = num2.length() - 1;
+        int a = 0;
+        int b = 0;
+        while (true) {
+            if (i >= 0 && j >= 0) {
+                a = Integer.parseInt(num1.charAt(i) + "");
+                b = Integer.parseInt(num2.charAt(j) + "");
+                sum += a + b;
+                result.append(sum % 10);
+                sum /= 10;
+            } else if (i >= 0) {
+                a = Integer.parseInt(num1.charAt(i) + "");
+                b = 0;
+                sum += a + b;
+                result.append(sum % 10);
+                sum /= 10;
+
+            } else if (j >= 0) {
+                a = 0;
+                b = Integer.parseInt(num2.charAt(j) + "");
+                sum += a + b;
+                result.append(sum % 10);
+                sum /= 10;
+            } else {
+                while (sum > 0) {
+                    result.append(sum % 10);
+                    sum /= 10;
+                }
+                return result.reverse().toString();
+            }
+            i--;
+            j--;
+        }
+    }
+
 }
 
