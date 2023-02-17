@@ -14,6 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EasyAlgorithmsTest {
     @Test
+    void testAddStrings() throws InterruptedException {
+        assertEquals("134", EasyAlgorithms.addStrings("11", "123"));
+        assertEquals("533", EasyAlgorithms.addStrings("456", "77"));
+        assertEquals("0", EasyAlgorithms.addStrings("0", "0"));
+
+    }
+
+    @Test
     void testAddToArrayForm() throws InterruptedException {
         assertArrayEquals(new Integer[]{1, 2, 3, 4}, EasyAlgorithms.addToArrayForm(new int[]{1, 2, 0, 0}, 34).toArray());
         assertArrayEquals(new Integer[]{4, 5, 5}, EasyAlgorithms.addToArrayForm(new int[]{2, 7, 4}, 181).toArray());

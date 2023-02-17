@@ -717,28 +717,14 @@ Do not allocate extra space for another array. You must do this by modifying the
         int sum = 0;
         int i = num1.length() - 1;
         int j = num2.length() - 1;
-        int a = 0;
-        int b = 0;
         while (true) {
             if (i >= 0 && j >= 0) {
-                a = Integer.parseInt(num1.charAt(i) + "");
-                b = Integer.parseInt(num2.charAt(j) + "");
-                sum += a + b;
-                result.append(sum % 10);
-                sum /= 10;
+                sum = helpingAddStrings(num1.charAt(i), num2.charAt(j), sum, result);
             } else if (i >= 0) {
-                a = Integer.parseInt(num1.charAt(i) + "");
-                b = 0;
-                sum += a + b;
-                result.append(sum % 10);
-                sum /= 10;
+                sum = helpingAddStrings(num1.charAt(i), '0', sum, result);
 
             } else if (j >= 0) {
-                a = 0;
-                b = Integer.parseInt(num2.charAt(j) + "");
-                sum += a + b;
-                result.append(sum % 10);
-                sum /= 10;
+                sum = helpingAddStrings('0', num2.charAt(j), sum, result);
             } else {
                 while (sum > 0) {
                     result.append(sum % 10);
@@ -749,6 +735,16 @@ Do not allocate extra space for another array. You must do this by modifying the
             i--;
             j--;
         }
+    }
+
+    public static int helpingAddStrings(char num1, char num2, int sum, StringBuilder result) {
+        int a = num1 - '0';
+        int b = num2 - '0';
+        sum += a + b;
+        result.append(sum % 10);
+        sum /= 10;
+        return sum;
+
     }
 
 }
