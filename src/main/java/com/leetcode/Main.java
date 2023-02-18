@@ -19,11 +19,8 @@ public class Main {
         //   ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
 
-        String a = "";
-        String b = "";
 
-        a.concat(b);
-        System.out.println(EasyAlgorithms.addStrings("456", "77"));
+        System.out.println(EasyAlgorithms.maxProfit(new int[]{5, 4, 6}));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
