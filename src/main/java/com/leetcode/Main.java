@@ -20,7 +20,7 @@ public class Main {
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
 
 
-        System.out.println(EasyAlgorithms.maxProfit(new int[]{5, 4, 6}));
+        System.out.println(EasyAlgorithms.maxProfit(new int[]{1, 5, 3, 6, 4}));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {

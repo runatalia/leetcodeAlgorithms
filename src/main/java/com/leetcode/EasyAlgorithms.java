@@ -752,16 +752,24 @@ Do not allocate extra space for another array. You must do this by modifying the
     //You want to maximize your profit by choosing a single day to buy one stock and choosing a different day
     // in the future to sell that stock.
     //Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-    public static int maxProfit(int[] prices) { //[7, 6, 5, 4, 6]
-        int max = 0;
-        for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[i] < prices[j]) {
-                    max = prices[j] - prices[i] > max ? prices[j] - prices[i] : max;
-                }
+    public static int maxProfit(int[] prices) { //[7, 6, 5, 4, 6, 7, 1, 2]
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int diff1 = 0;
+        int diff2 = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            if (prices[i] <= prices[i + 1]) {
+                min = prices[i] < min ? prices[i] : min;
+                max = prices[i + 1] > max ? prices[i + 1] : max;
+                diff1 = max - min;
+            } else {
+                max = 0;
+                min = 0;
+                diff2 = diff2 > diff1 ? diff2 : diff1;
             }
+
         }
-        return max;
+        return diff2;
 
     }
 
