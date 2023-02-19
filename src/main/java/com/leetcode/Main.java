@@ -1,6 +1,7 @@
 package com.leetcode;
 
 
+import additionalClasses.LinkedList1;
 import additionalClasses.ListNode;
 import org.w3c.dom.Node;
 
@@ -18,9 +19,12 @@ public class Main {
         //   int[] a = new int[]{9, 9, 9};
         //   ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
+        LinkedList1<String> ls = new LinkedList1();
+        for (String a : "ff dd".split(" ")) {
+            System.out.println(a);
+        }
 
-
-        System.out.println(EasyAlgorithms.maxProfit(new int[]{1, 5, 3, 6, 4}));
+        //   System.out.println(EasyAlgorithms.maxProfit(new int[]{1, 5, 3, 6, 4}));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
