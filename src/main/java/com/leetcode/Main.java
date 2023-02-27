@@ -17,14 +17,14 @@ public class Main {
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
         //   int[] a = new int[]{9, 9, 9};
-        //   ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        ListNode node = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
-        LinkedList1<String> ls = new LinkedList1();
-        for (String a : "ff dd".split(" ")) {
-            System.out.println(a);
-        }
-
-        //   System.out.println(EasyAlgorithms.maxProfit(new int[]{1, 5, 3, 6, 4}));
+        //      LinkedList1<String> ls = new LinkedList1();
+        //     for (String a : "ff dd".split(" ")) {
+        //          System.out.println(a);
+        //      }
+        ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
+        //       System.out.println(EasyAlgorithms.deleteDuplicates(node));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {

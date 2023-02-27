@@ -685,10 +685,16 @@ Do not allocate extra space for another array. You must do this by modifying the
     //Given the head of a sorted linked list,
     // delete all duplicates such that each element appears only once. Return the linked list sorted as well.
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) return head;
-        head.next = deleteDuplicates(head.next);
-        return head.val == head.next.val ? head.next : head;
+        if (head.next == null) {
+            return null;
+        }
+        if (head.val == head.next.val) {
+            head = head.next;
+            deleteDuplicates(head);
+        } else deleteDuplicates(head.next);
+        return head;
     }
+
 
     //989. Add to Array-Form of Integer
     //The array-form of an integer num is an array representing its digits in left to right order.
