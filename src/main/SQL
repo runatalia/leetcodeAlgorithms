@@ -49,3 +49,63 @@ left join  Company c on c.com_id = o.com_id where name = 'RED');
 1050. Actors and Directors Who Cooperated At Least Three Times
 select  actor_id,director_id
 from ActorDirector group by director_id, actor_id having count(timestamp)>2
+
+4. www.sql-ex.ru Для каждой группы блокнотов с одинаковым номером модели добавить запись в таблицу PC со следующими характеристиками:
+                 код: минимальный код блокнота в группе +20;
+                 модель: номер модели блокнота +1000;
+                 скорость: максимальная скорость блокнота в группе;
+                 ram: максимальный объем ram блокнота в группе *2;
+                 hd: максимальный объем hd блокнота в группе *2;
+                 cd: значение по умолчанию;
+                 цена: максимальная цена блокнота в группе, уменьшенная в 1,5 раза.
+                 Замечание. Считать номер модели числом.
+
+insert into PC (code,model,speed,ram,hd,price)
+ select min(code)+20 ,
+  model+1000 ,
+ max(speed) ,
+  max(ram)*2  ,
+ max(hd)*2 ,
+ max(price)/1.5
+from laptop group by model
+  ;
+
+
+5.www.sql-ex.ru Удалить из таблицы PC компьютеры, имеющие минимальный объем диска или памяти.
+delete from PC where ram = (select min(ram) from PC) or
+hd = (select min(hd) from PC)
+
+6.www.sql-ex.ru Удалить все блокноты, выпускаемые производителями, которые не выпускают принтеры.
+
+delete from Laptop where model in(select model from Product
+where maker not in (select maker from Product where type = 'Printer'))
+
+7.www.sql-ex.ru Производство принтеров производитель A передал производителю Z. Выполнить соответствующее изменение.
+update Product set maker = 'Z' where maker ='A' and type = 'Printer'
+
+8. www.sql-ex.ru Удалите из таблицы Ships все корабли, потопленные в сражениях
+delete from Ships where name in(select ship from Outcomes where result='sunk' )
+
+9. www.sql-ex.ru Измените данные в таблице Classes так, чтобы калибры орудий измерялись в
+                 сантиметрах (1 дюйм=2,5см), а водоизмещение в метрических тоннах (1
+                 метрическая тонна = 1,1 тонны). Водоизмещение вычислить с точностью до
+                 целых.
+
+update Classes  set bore = bore  * 2.5 , displacement= round(displacement / 1.1,0)
+
+1141. User Activity for the Past 30 Days I
+
+select activity_date as day , count( distinct user_id) as active_users from  Activity group by activity_date having
+activity_date in( select activity_date from Activity where activity_date<"2019-07-27" and  activity_date>"2019-06-27" )
+
+1084. Sales Analysis III
+select s.product_id,product_name from sales s left join Product p on(p.product_id =
+s.product_id)
+group by s.product_id having min(sale_date)>="2019-01-01" AND max(sale_date)<="2019-03-31"
+
+1407. Top Travellers
+select u.name, COALESCE(sum(r.distance),0)  as travelled_distance from Users u left join Rides r on(u.id = user_id)
+group by user_id
+order by sum(r.distance) DESC,name asc
+
+
