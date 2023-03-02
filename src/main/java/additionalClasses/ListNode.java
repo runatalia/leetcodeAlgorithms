@@ -23,7 +23,7 @@ public class ListNode {
 
     public static void showListNode(ListNode listNode) {
         if (listNode == null) return;
-        System.out.println(listNode.val);
+        System.out.print(listNode.val);
         showListNode(listNode.next);
     }
 
