@@ -5,7 +5,9 @@ import additionalClasses.LinkedList1;
 import additionalClasses.ListNode;
 import org.w3c.dom.Node;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,16 +19,19 @@ public class Main {
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
         //   int[] a = new int[]{9, 9, 9};
-        //  ListNode node1 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        //   ListNode node2 = new ListNode(2, new ListNode(4, new ListNode(9, new ListNode(5)))); //35193
-        ListNode node1 = new ListNode(9);
-        ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
+        ListNode node1 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        ListNode node2 = new ListNode(2, new ListNode(4, new ListNode(9, new ListNode(5)))); //35193
+        //  ListNode node1 = new ListNode(9);
+        //  ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
         //      LinkedList1<String> ls = new LinkedList1();
         //     for (String a : "ff dd".split(" ")) {
         //          System.out.println(a);
         //      }
         ListNode.showListNode(MediumAlgorithms.addTwoNumbers(node1, node2));
+        //     Map<String, Integer> map = Map.of();
+
+
         //       System.out.println(EasyAlgorithms.deleteDuplicates(node));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
@@ -61,6 +66,6 @@ public class Main {
 //    @Override
 //    public void uncaughtException(Thread t, Throwable e) {
 //        System.out.println("ошибочка!!");
+
     }
 }
-
