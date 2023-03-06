@@ -19,8 +19,8 @@ public class Main {
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
         //   int[] a = new int[]{9, 9, 9};
-        ListNode node1 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        ListNode node2 = new ListNode(2, new ListNode(4, new ListNode(9, new ListNode(5)))); //35193
+        ListNode node1 = new ListNode(1, new ListNode(1));
+        ListNode node2 = new ListNode(2, new ListNode(4, new ListNode(7))); //35193
         //  ListNode node1 = new ListNode(9);
         //  ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));

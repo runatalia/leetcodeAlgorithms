@@ -160,7 +160,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
     // Add the two numbers and return the sum as a linked list.
     //You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) { //прорешать при переполнении
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(), node = head;
         int sum = 0;
         while (l1 != null || l2 != null || sum != 0) {
@@ -172,12 +172,11 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
                 sum += l2.val;
                 l2 = l2.next;
             }
-            node.val = sum % 10;
-            node.next = new ListNode();
+            node.next = new ListNode(sum % 10);
             node = node.next;
             sum = sum / 10;
         }
-        return head;
+        return head.next;
     }
 }
 
