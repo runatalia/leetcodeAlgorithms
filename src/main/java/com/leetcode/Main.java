@@ -20,7 +20,8 @@ public class Main {
 //        Optional opt = Arrays.stream(arr).findAny();
         //   int[] a = new int[]{9, 9, 9};
         ListNode node1 = new ListNode(1, new ListNode(1));
-        ListNode node2 = new ListNode(2, new ListNode(4, new ListNode(7))); //35193
+        ListNode node2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        ListNode node3 = new ListNode();
         //  ListNode node1 = new ListNode(9);
         //  ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
@@ -28,7 +29,7 @@ public class Main {
         //     for (String a : "ff dd".split(" ")) {
         //          System.out.println(a);
         //      }
-        ListNode.showListNode(MediumAlgorithms.addTwoNumbers(node1, node2));
+        ListNode.showListNode(EasyAlgorithms.deleteDuplicatesSolve1(node3));
         //     Map<String, Integer> map = Map.of();
 
 

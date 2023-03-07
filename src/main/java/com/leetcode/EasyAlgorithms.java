@@ -684,14 +684,28 @@ Do not allocate extra space for another array. You must do this by modifying the
     //83. Remove Duplicates from Sorted List
     //Given the head of a sorted linked list,
     // delete all duplicates such that each element appears only once. Return the linked list sorted as well.
-    public static ListNode deleteDuplicates(ListNode head) { // не проходит тесты, перерешать
-        if (head.next == null) {
-            return null;
+    public static ListNode deleteDuplicatesSolve1(ListNode head) {
+        ListNode node = new ListNode(head.val), res = node;
+        while (head.next != null) {
+            if (head.val != head.next.val) {
+                res.val = head.val;
+                res.next = new ListNode(head.next.val);
+                res = res.next;
+                head = head.next;
+            } else {
+                head = head.next;
+            }
         }
-        if (head.val == head.next.val) {
-            head = head.next;
-            deleteDuplicates(head);
-        } else deleteDuplicates(head.next);
+        return node;
+    }
+
+    public static ListNode deleteDuplicatesSolve2(ListNode head) { // прорешать через рекурсию
+
+        return head;
+    }
+
+    public static ListNode deleteDuplicatesSolve3(ListNode head) { // перерешать без доп нод
+
         return head;
     }
 

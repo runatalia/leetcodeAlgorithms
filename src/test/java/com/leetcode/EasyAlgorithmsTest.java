@@ -32,19 +32,25 @@ class EasyAlgorithmsTest {
     }
 
     @Test
-    void testDeleteDuplicates() throws InterruptedException {
-        List<Integer> node1 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
+    void testDeleteDuplicatesSolve1() throws InterruptedException {
+        List<Integer> node1 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
                 new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
-        List<Integer> node2 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
+        List<Integer> node2 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
                 new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(5)))))));
-        List<Integer> node3 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
+        List<Integer> node3 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
                 new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(5)))))));
-        List<Integer> node4 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicates(
+        List<Integer> node4 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
                 new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
+        List<Integer> node5 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
+                new ListNode(1, new ListNode(1))));
+        List<Integer> node6 = new ListNode().listNodeToArrays(EasyAlgorithms.deleteDuplicatesSolve1(
+                new ListNode()));
         assertEquals(List.of(1, 2, 3), node1);
         assertEquals(List.of(1, 2, 5), node2);
         assertEquals(List.of(1, 3, 4, 5), node3);
         assertEquals(List.of(1, 3, 4, 5, 6), node4);
+        assertEquals(List.of(1), node5);
+        assertEquals(List.of(0), node6);
     }
 
     @Test
