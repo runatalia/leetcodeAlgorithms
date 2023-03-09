@@ -700,13 +700,9 @@ Do not allocate extra space for another array. You must do this by modifying the
     }
 
     public static ListNode deleteDuplicatesSolve2(ListNode head) { // прорешать через рекурсию
-
-        return head;
-    }
-
-    public static ListNode deleteDuplicatesSolve3(ListNode head) { // перерешать без доп нод
-
-        return head;
+        if (head == null || head.next == null) return head;
+        head.next = deleteDuplicatesSolve2(head.next);
+        return head.val == head.next.val ? head.next : head;
     }
 
 
