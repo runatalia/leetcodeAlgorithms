@@ -21,7 +21,7 @@ public class Main {
         //   int[] a = new int[]{9, 9, 9};
         ListNode node1 = new ListNode(1, new ListNode(1, new ListNode(2)));
         ListNode node2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        ListNode node3 = new ListNode();
+        ListNode node3 = new ListNode(1);
         //  ListNode node1 = new ListNode(9);
         //  ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
@@ -29,11 +29,11 @@ public class Main {
         //     for (String a : "ff dd".split(" ")) {
         //          System.out.println(a);
         //      }
-        ListNode.showListNode(EasyAlgorithms.deleteDuplicatesSolve3(node2));
+        // ListNode.showListNode(EasyAlgorithms.hasCycle(node2));
         //     Map<String, Integer> map = Map.of();
 
 
-        //       System.out.println(EasyAlgorithms.deleteDuplicates(node));
+        System.out.println(EasyAlgorithms.hasCycle(node3));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {

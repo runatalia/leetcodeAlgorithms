@@ -786,6 +786,30 @@ Do not allocate extra space for another array. You must do this by modifying the
 
         }
         return diff2;
+    }
+
+    //141. Linked List Cycle
+    public static boolean hasCycle(ListNode head) {
+        ListNode head1 = head;
+        ListNode head2 = head;
+        int cicle1 = 0;
+        int cicle2 = 0;
+        while (true) {
+            if (head == null) {
+                return cicle2 - cicle1 >= 0 ? true : false;
+            }
+            cicle1 += 1;
+            cicle2 += 2;
+
+            if (head2.next == null) {
+
+            }
+            if (head.next.next == null) {
+
+            }
+            head2 = head.next.next;
+            head1 = head.next;
+        }
 
     }
 
