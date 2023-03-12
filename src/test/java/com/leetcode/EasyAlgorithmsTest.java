@@ -8,11 +8,18 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class EasyAlgorithmsTest {
+    @Test
+    void testHasCycle() throws InterruptedException {
+        assertTrue(EasyAlgorithms.hasCycle(new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))))));
+        assertTrue(EasyAlgorithms.hasCycle(new ListNode(1, new ListNode(2, new ListNode()))));
+        assertFalse(EasyAlgorithms.hasCycle(new ListNode(-1)));
+
+    }
+
     @Test
     void testAddStrings() throws InterruptedException {
         assertEquals("134", EasyAlgorithms.addStrings("11", "123"));

@@ -33,7 +33,7 @@ public class Main {
         //     Map<String, Integer> map = Map.of();
 
 
-        System.out.println(EasyAlgorithms.hasCycle(node3));
+        System.out.println(EasyAlgorithms.hasCycle(new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))))));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
