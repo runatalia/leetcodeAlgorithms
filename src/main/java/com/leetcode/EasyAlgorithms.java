@@ -789,14 +789,65 @@ Do not allocate extra space for another array. You must do this by modifying the
     }
 
     //141. Linked List Cycle
+//    Given head, the head of a linked list, determine if the linked list has a cycle in it.
+//    There is a cycle in a linked list if there is some node in the list that can
+//    be reached again by continuously following the next pointer. Internally, pos is
+//    used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+//    Return true if there is a cycle in the linked list. Otherwise, return false.return
     public static boolean hasCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast)
                 return true;
+        }
+        return false;
+    }
+
+    // 142 . Цикл связанного списка II
+//    Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
+//
+//    There is a cycle in a linked list if there is some node in the list that can be reached again by continuously
+//    following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected
+//    to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.
+//    Do not modify the linked list.
+    public static ListNode detectCycle(ListNode head) { //перерешать, создать зацикленный список
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (slow == fast) {
+                break;
+            }
+        }
+        if (fast == null || fast.next == null) return null;
+        while (head != slow) {
+            head = head.next;
+            slow = slow.next;
+        }
+        return head;
+
+    }
+
+    //202. Happy Number
+//    Write an algorithm to determine if a number n is happy.
+//    A happy number is a number defined by the following process:
+//    Starting with any positive integer, replace the number by the sum of the squares of its digits.
+//    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+//    Those numbers for which this process ends in 1 are happy.
+//    Return true if n is a happy number, and false if not.
+    public static boolean isHappy(int n) { //перерешать не все тесты проходит
+        int sum = 0;
+        while (n > 9) {
+            while (n != 0) {
+                sum += (n % 10) * (n % 10);
+                n /= 10;
+            }
+            if (sum == 1) return true;
+            n = sum;
+            sum = 0;
         }
         return false;
     }

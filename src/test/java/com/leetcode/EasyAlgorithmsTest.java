@@ -13,14 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EasyAlgorithmsTest {
     @Test
-    void testHasCycle() throws InterruptedException {
-        assertTrue(EasyAlgorithms.hasCycle(new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))))));
-        assertTrue(EasyAlgorithms.hasCycle(new ListNode(1, new ListNode(2, new ListNode()))));
-        assertFalse(EasyAlgorithms.hasCycle(new ListNode(-1)));
-
-    }
-
-    @Test
     void testAddStrings() throws InterruptedException {
         assertEquals("134", EasyAlgorithms.addStrings("11", "123"));
         assertEquals("533", EasyAlgorithms.addStrings("456", "77"));

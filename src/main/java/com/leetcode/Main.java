@@ -32,8 +32,9 @@ public class Main {
         // ListNode.showListNode(EasyAlgorithms.hasCycle(node2));
         //     Map<String, Integer> map = Map.of();
 
+        ListNode node = new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4, new ListNode(2)))));
 
-        System.out.println(EasyAlgorithms.hasCycle(new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))))));
+        System.out.println(EasyAlgorithms.detectCycle(node));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
 //        service.execute(new Runnable() {
