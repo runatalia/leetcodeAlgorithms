@@ -19,9 +19,11 @@ public class Main {
 //        Object[] arr = new Object[]{};
 //        Optional opt = Arrays.stream(arr).findAny();
         //   int[] a = new int[]{9, 9, 9};
-        ListNode node1 = new ListNode(1, new ListNode(1, new ListNode(2)));
-        ListNode node2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        ListNode node3 = new ListNode(1);
+        ListNode node2 = new ListNode(4);
+        ListNode node3 = new ListNode(2, new ListNode(0, node2));
+        node2.next = node3;
+        // ListNode node2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        // ListNode node3 = new ListNode(1);
         //  ListNode node1 = new ListNode(9);
         //  ListNode node2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
         //  ListNode.showListNode(EasyAlgorithms.deleteDuplicates(node));
@@ -32,8 +34,7 @@ public class Main {
         // ListNode.showListNode(EasyAlgorithms.hasCycle(node2));
         //     Map<String, Integer> map = Map.of();
 
-        ListNode node = new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4, new ListNode(2)))));
-
+        ListNode node = new ListNode(3, node3);
         System.out.println(EasyAlgorithms.detectCycle(node));
 //        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 //        ExecutorService service = Executors.newFixedThreadPool(5);
@@ -63,7 +64,6 @@ public class Main {
 //        });
 //        th2.setName("second");
 //        th2.start();
-//
 //    }
 //    @Override
 //    public void uncaughtException(Thread t, Throwable e) {
