@@ -1,10 +1,8 @@
 package com.leetcode;
 
-import additionalClasses.LinkedList1;
-import additionalClasses.ListNode;
+import com.leetcode.additionalClasses.ListNode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MediumAlgorithms {

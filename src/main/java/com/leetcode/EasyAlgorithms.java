@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import additionalClasses.ListNode;
+import com.leetcode.additionalClasses.ListNode;
 
 import java.util.*;
 

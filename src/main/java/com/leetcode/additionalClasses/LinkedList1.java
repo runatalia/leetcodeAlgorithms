@@ -1,4 +1,4 @@
-package additionalClasses;
+package com.leetcode.additionalClasses;
 
 import java.util.Iterator;
 

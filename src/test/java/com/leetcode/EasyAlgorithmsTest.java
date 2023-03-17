@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import additionalClasses.ListNode;
+import com.leetcode.additionalClasses.ListNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
