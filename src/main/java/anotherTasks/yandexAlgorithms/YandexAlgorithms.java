@@ -1,4 +1,4 @@
-package com.leetcode;
+package anotherTasks.yandexAlgorithms;
 
 public class YandexAlgorithms {
 
@@ -31,7 +31,7 @@ i
         boolean flag = false;
         while (flag != true) {
             flag = true;
-            for (int i = 0; i < a.length-1; i++) {
+            for (int i = 0; i < a.length - 1; i++) {
                 if (a[i] > a[i + 1] || a[i] > max) return -1;
                 if (a[i] < max) {
                     a[i]++;
@@ -42,7 +42,7 @@ i
             count++;
         }
 
-return count-1;
+        return count - 1;
     }
 
 
@@ -50,9 +50,9 @@ return count-1;
 
         int max = a[a.length - 1];
         int count = max - a[0];
-            for (int i = 0; i < a.length; i++) {
-                if (a[i] > count +a [i]) return -1;
-                }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > count + a[i]) return -1;
+        }
         return count;
     }
 }

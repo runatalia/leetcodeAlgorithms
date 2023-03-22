@@ -1,4 +1,4 @@
-package transliterator;
+package anotherTasks.transliterator;
 
 
 public class TransliteratorImpl implements Transliterator {

@@ -1,4 +1,4 @@
-package RatedLimitedPrinter;
+package anotherTasks.RatedLimitedPrinter;
 
 public class RateLimitedPrinterTest {
     public static void main(String[] args) {

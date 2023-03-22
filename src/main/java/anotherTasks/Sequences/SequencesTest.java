@@ -1,4 +1,4 @@
-package Sequences;
+package anotherTasks.Sequences;
 
 import java.util.Scanner;
 

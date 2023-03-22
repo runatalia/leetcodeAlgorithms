@@ -1,4 +1,4 @@
-package complexNumbers;
+package anotherTasks.complexNumbers;
 
 public interface ComplexNumbers {
     ComplexNumbers sum(ComplexNumbersImpl complexNumbers);

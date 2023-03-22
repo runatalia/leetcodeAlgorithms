@@ -1,4 +1,4 @@
-package statsAccumulator;
+package anotherTasks.statsAccumulator;
 
 public interface StatsAccumulator {
     /**

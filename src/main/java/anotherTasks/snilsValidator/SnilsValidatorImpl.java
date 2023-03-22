@@ -1,4 +1,4 @@
-package snilsValidator;
+package anotherTasks.snilsValidator;
 
 
 public class SnilsValidatorImpl implements SnilsValidator {

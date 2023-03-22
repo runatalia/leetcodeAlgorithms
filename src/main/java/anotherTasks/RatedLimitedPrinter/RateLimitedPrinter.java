@@ -1,4 +1,4 @@
-package RatedLimitedPrinter;
+package anotherTasks.RatedLimitedPrinter;
 
 public class RateLimitedPrinter {
     private int interval;

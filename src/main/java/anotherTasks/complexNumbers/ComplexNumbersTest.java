@@ -1,6 +1,4 @@
-package complexNumbers;
-
-import complexNumbers.ComplexNumbersImpl;
+package anotherTasks.complexNumbers;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Sequences;
+package anotherTasks.Sequences;
 
 public interface Sequences {
     /**

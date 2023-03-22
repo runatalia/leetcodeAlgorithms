@@ -1,4 +1,4 @@
-package snilsValidator;
+package anotherTasks.snilsValidator;
 
 import java.util.Scanner;
 

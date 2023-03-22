@@ -1,4 +1,4 @@
-package statsAccumulator;
+package anotherTasks.statsAccumulator;
 
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
